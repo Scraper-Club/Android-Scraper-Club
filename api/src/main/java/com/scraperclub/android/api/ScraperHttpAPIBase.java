@@ -12,7 +12,7 @@ abstract class ScraperHttpAPIBase implements ScraperAPI{
 
     TextHtmlHttpRequest uploadHtmlRequest;
     FormUrlEncodedHttpRequest loginRequest, registerDeviceRequest, verifyApiKeyRequest;
-    HttpRequest getDeviceStatisticRequest, getNexrUrlRequest, checkDeviceRequest;
+    HttpRequest getDeviceStatisticRequest, getNexrUrlRequest, checkDeviceRequest, badUrlRequest;
 
     private List<HttpRequest> requests;
 
@@ -46,6 +46,9 @@ abstract class ScraperHttpAPIBase implements ScraperAPI{
         checkDeviceRequest = new HttpRequest();
         checkDeviceRequest.setConnectionUrl(ScraperAPIUrls.checkDevice());
         requests.add(checkDeviceRequest);
+
+        badUrlRequest = new HttpRequest();
+        requests.add(badUrlRequest);
     }
 
     public void setDeviceId(String deviceId){

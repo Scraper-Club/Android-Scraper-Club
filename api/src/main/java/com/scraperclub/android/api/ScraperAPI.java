@@ -27,4 +27,6 @@ public interface ScraperAPI {
     void setApiKey(ApiKey apiKey);
 
     Single<ScraperUrl> getNextUrl(String pool);
+
+    Completable badUrl(int urlId);
 }

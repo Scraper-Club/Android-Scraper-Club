@@ -54,4 +54,8 @@ public class ScraperAPIUrls {
             throw new RuntimeException(e);
         }
     }
+
+    public static URL badUrl(int urlId){
+        return fromString(API_URL + String.format(Locale.US,"v1/url/%d/bad/",urlId));
+    }
 }

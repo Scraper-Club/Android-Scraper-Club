@@ -134,4 +134,16 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
                 .doOnSuccess(parseServerResponse)
                 .map(ApiKey.getJsonMapper());
     }
+
+    @Override
+    public Completable badUrl(int urlId) {
+        badUrlRequest.setConnectionUrl(ScraperAPIUrls.badUrl(urlId));
+        return makeHttpRequest(badUrlRequest)
+                .doOnSuccess(parseServerResponse)
+                .flatMapCompletable(response->Completable.create(
+                        emitter -> {
+                            if(!emitter.isDisposed())emitter.onComplete();
+                        }
+                ));
+    }
 }
