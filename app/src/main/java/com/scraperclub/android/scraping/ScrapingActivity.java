@@ -20,6 +20,7 @@ import com.scraperclub.android.scraping.experimental.UploadToServerHandler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
 import io.reactivex.disposables.Disposable;
+import io.reactivex.schedulers.Schedulers;
 import io.reactivex.subjects.PublishSubject;
 
 public class ScrapingActivity extends ScrapingActivityBase{
@@ -117,6 +118,11 @@ public class ScrapingActivity extends ScrapingActivityBase{
                                                 startScraping();
                                             },
                                             err -> {
+                                                if(err instanceof ScrapingFailedException){
+                                                    int badUrlId = ((ScrapingFailedException)err).getUrlId();
+                                                    api.badUrl(badUrlId).observeOn(Schedulers.io()).subscribe();
+                                                }
+
                                                 showToastMsg(err.getMessage());
                                                 if (dialog.isShowing()) {
                                                     dialog.dismiss();
