@@ -49,10 +49,11 @@ public class ScrapingWebView extends ScrapingWebViewBase implements ScrapingCore
     }
 
     @Override
-    protected void scrapFailed(String error) {
+    protected void scrapFailed(String errorMessage) {
+        int urlId = currentUrl.getId();
         currentUrl = null;
         if(resultEmitter!=null && !resultEmitter.isDisposed()){
-            resultEmitter.onError(new ScrapingFailedException(error));
+            resultEmitter.onError(new ScrapingFailedException(errorMessage, urlId));
         }
     }
 }
