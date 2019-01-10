@@ -38,6 +38,11 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
     }
     buildToolsVersion rootProject.ext.buildToolsVersion
+    flavorDimensions "default"
+    productFlavors {
+        opensource {
+        }
+    }
 }
 
 
