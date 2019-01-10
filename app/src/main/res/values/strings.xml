@@ -1,0 +1,41 @@
+<resources>
+    <string name="app_name">WebScraper</string>
+
+    <string name="login_activity_label">Log in</string>
+    <string name="signup_activity_label">Sign up</string>
+    <string name="login_hint">Username</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="retype_password_hint">Re-type password</string>
+    <string name="button_login_text">Login</string>
+    <string name="button_signup_text">Create account</string>
+    <string name="link_signup_text"><u>Create new account</u></string>
+
+    <string name="login_length_err_msg">Login must be at least %d characters</string>
+    <string name="login_content_err_msg">Login must be from latin characters and numbers without spaces</string>
+    <string name="password_err_msg">Password must be at least %d symbols</string>
+
+    <string name="preference_file_key">shared_prefs</string>
+
+    <string name="token_value_key">token_val</string>
+    <string name="token_expires_key">token_expires</string>
+    <string name="apikey_login_text"><u>Login with api key</u></string>
+    <string name="apikey_hint">Api key</string>
+    <string name="server_online">(online)</string>
+    <string name="server_offline">(offline)</string>
+
+    <string name="register_device_text">
+        Sign up on the web site.
+        Login via device.
+    </string>
+    <string name="get_token_text">
+        Enable scraping on your device.
+        Get tokens for scraped URls.
+    </string>
+    <string name="upload_target_text">
+        Use tokens to upload your URLs on server.
+    </string>
+    <string name="application_description">
+        Scraper Club is a network of people who share their device while it is not in use so they can use the power of the network when they need.
+    </string>
+</resources>

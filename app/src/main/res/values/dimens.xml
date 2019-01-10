@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_padding">16dp</dimen>
+
+    <dimen name="text_input_margin">8dp</dimen>
+    <dimen name="link_signup_textsize">16sp</dimen>
+    <dimen name="button_login_margin">24dp</dimen>
+    <dimen name="button_login_padding">12dp</dimen>
+    <dimen name="label_textsize">30sp</dimen>
+    <dimen name="label_margin_top">30dp</dimen>
+    <dimen name="apikey_login_textsize">16sp</dimen>
+</resources>

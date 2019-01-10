@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".views.MainActivity">
+
+    <TextView
+        android:textStyle="bold"
+        android:layout_marginTop="10dp"
+        android:id="@+id/header_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:layout_marginTop="24dp"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Phone stats:" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="2">
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Server status" />
+
+        <LinearLayout
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+            <ImageView
+                android:id="@+id/serverStatusImg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                android:id="@+id/serverStatusLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="(offline)" />
+        </LinearLayout>
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Current IP:" />
+
+        <TextView
+            android:id="@+id/currentIpTextView"
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="API key:" />
+
+        <TextView
+            android:id="@+id/apiKeyTextView"
+            style="@style/StatsStyle"
+            android:textSize="10sp"
+            android:text=""
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total scrapes:" />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/totalScrapsTextView"/>
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hour scrapes:" />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/todayScrapsTextView"/>
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Public pool:" />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/availableUrlsTextView" />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Private pool:"
+            android:id="@+id/privateUrlsLabel"
+            android:visibility="gone"/>
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/privateUrlsTextView"
+            android:visibility="gone"/>
+
+    </GridLayout>
+
+    <View
+        android:id="@+id/divider2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+    <Switch
+        android:id="@+id/enable_scraping_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scrap public pool"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
+    <Switch
+        android:id="@+id/scrapPrivateSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scrap private pool"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/log_scroll_view"
+        android:layout_marginTop="25dp"
+        android:layout_width="300dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center">
+    <TextView
+        android:id="@+id/log_text_view"
+        android:textSize="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:singleLine="false" />
+    </ScrollView>
+</LinearLayout>
