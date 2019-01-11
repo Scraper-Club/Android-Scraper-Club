@@ -1,6 +1,4 @@
 <resources>
-    <string name="app_name">WebScraper</string>
-
     <string name="login_activity_label">Log in</string>
     <string name="signup_activity_label">Sign up</string>
     <string name="login_hint">Username</string>
