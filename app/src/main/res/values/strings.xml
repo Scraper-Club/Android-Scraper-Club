@@ -36,4 +36,5 @@
     <string name="application_description">
         Scraper Club is a network of people who share their device while it is not in use so they can use the power of the network when they need.
     </string>
+    <string name="change_server"><u>Change server</u></string>
 </resources>

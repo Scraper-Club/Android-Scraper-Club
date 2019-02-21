@@ -1,103 +1,142 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".views.LoginActivity">
+    android:orientation="vertical"
+    tools:context=".views.authentication.EmailLoginActivity"
+    android:padding="@dimen/activity_padding"
+    android:weightSum="10">
 
-    <LinearLayout
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <!-- HEADER -->
+    <LinearLayout
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         android:orientation="vertical"
-        android:weightSum="1">
-
-        <RelativeLayout
+        android:gravity="top">
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="0.5"
-            android:layout_marginTop="@dimen/label_margin_top"
-            >
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:layout_centerInParent="true"
-                android:text="@string/login_activity_label"
-                android:textSize="@dimen/label_textsize"
-                android:textColor="@color/colorPrimary"/>
+            android:gravity="center"
+            android:text="@string/login_activity_label"
+            android:textSize="@dimen/label_textsize"
+            android:textColor="@color/colorPrimary"/>
 
-        </RelativeLayout>
-
-        <LinearLayout
-            android:id="@+id/authentication_form"
+        <TextView
+            android:id="@+id/server_url"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="@dimen/activity_padding"
-            android:layout_weight="0.5"
-            android:focusable="true"
-            android:focusableInTouchMode="true">
+            android:layout_marginTop="8dip"
+            android:layout_marginBottom="8dip"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="https://android.scraperclub.com"
+            android:textColor="@android:color/black"/>
 
-            <!-- Login label-->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/text_input_margin"
-                android:layout_marginBottom="@dimen/text_input_margin">
-
-                <EditText
-                    android:id="@+id/input_email"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textEmailAddress"
-                    android:hint="@string/login_hint"/>
-            </android.support.design.widget.TextInputLayout>
-
-            <!-- Password label-->
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/text_input_margin"
-                android:layout_marginBottom="@dimen/text_input_margin">
-                <EditText
-                    android:id="@+id/input_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="textPassword"
-                    android:hint="@string/password_hint"
-                    />
-            </android.support.design.widget.TextInputLayout>
-
-            <android.support.v7.widget.AppCompatButton
-                android:id="@+id/button_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/button_login_margin"
-                android:layout_marginBottom="@dimen/button_login_margin"
-                android:padding="@dimen/button_login_padding"
-                android:text="@string/button_login_text"
-                android:textColor="@android:color/white"
-                android:background="@color/colorPrimary"/>
-
-            <TextView android:id="@+id/link_apikey_login"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="@dimen/apikey_login_textsize"
-                android:text="@string/apikey_login_text"
-                android:layout_margin="16dp"
-                />
-
-            <TextView android:id="@+id/link_signup"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:textSize="@dimen/link_signup_textsize"
-                android:text="@string/link_signup_text"
-                />
-
-        </LinearLayout>
+        <TextView
+            android:id="@+id/change_server"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/link_signup_textsize"
+            android:text="@string/change_server"
+            />
 
     </LinearLayout>
 
-</ScrollView>
+    <!-- INPUT -->
+    <LinearLayout
+        android:layout_weight="3"
+        android:id="@+id/authentication_form"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/activity_padding"
+        android:paddingRight="@dimen/activity_padding"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center">
+        <!-- Login label-->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_margin"
+            android:layout_marginBottom="@dimen/text_input_margin">
+
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:hint="@string/login_hint"/>
+
+        </android.support.design.widget.TextInputLayout>
+        <!-- Password label-->
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/text_input_margin"
+            android:layout_marginBottom="@dimen/text_input_margin">
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:hint="@string/password_hint"
+                />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
+
+    <!-- ACTIONS -->
+    <LinearLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:gravity="top|center_horizontal"
+        android:paddingLeft="@dimen/activity_padding"
+        android:paddingRight="@dimen/activity_padding">
+
+        <android.support.v7.widget.AppCompatButton
+            android:id="@+id/button_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/button_login_margin"
+            android:layout_marginBottom="@dimen/button_login_margin"
+            android:padding="@dimen/button_login_padding"
+            android:text="@string/button_login_text"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"/>
+
+        <TextView android:id="@+id/link_apikey_login"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/apikey_login_textsize"
+            android:text="@string/apikey_login_text"
+            android:layout_margin="16dp"
+            />
+
+        <TextView android:id="@+id/link_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="@dimen/link_signup_textsize"
+            android:text="@string/link_signup_text"
+            />
+
+    </LinearLayout>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+</LinearLayout>
