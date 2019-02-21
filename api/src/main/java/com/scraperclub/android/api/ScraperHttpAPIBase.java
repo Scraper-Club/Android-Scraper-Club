@@ -23,28 +23,22 @@ abstract class ScraperHttpAPIBase implements ScraperAPI{
         requests.add(uploadHtmlRequest);
 
         loginRequest = new FormUrlEncodedHttpRequest();
-        loginRequest.setConnectionUrl(APIUrlsResolver.login());
         requests.add(loginRequest);
 
         verifyApiKeyRequest = new FormUrlEncodedHttpRequest();
-        verifyApiKeyRequest.setConnectionUrl(APIUrlsResolver.verifyApiKey());
         requests.add(verifyApiKeyRequest);
 
 
         getDeviceStatisticRequest = new HttpRequest();
-        getDeviceStatisticRequest.setConnectionUrl(APIUrlsResolver.deviceStatistics());
         requests.add(getDeviceStatisticRequest);
 
         getNexrUrlRequest = new HttpRequest();
-        getNexrUrlRequest.setConnectionUrl(APIUrlsResolver.getNextUrl());
         requests.add(getNexrUrlRequest);
 
         registerDeviceRequest = new FormUrlEncodedHttpRequest();
-        registerDeviceRequest.setConnectionUrl(APIUrlsResolver.registerDevice());
         requests.add(registerDeviceRequest);
 
         checkDeviceRequest = new HttpRequest();
-        checkDeviceRequest.setConnectionUrl(APIUrlsResolver.checkDevice());
         requests.add(checkDeviceRequest);
 
         badUrlRequest = new HttpRequest();

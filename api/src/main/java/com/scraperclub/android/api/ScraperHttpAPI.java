@@ -41,6 +41,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Single<DeviceStatistic> getDeviceStatistic() {
+        getDeviceStatisticRequest.setConnectionUrl(APIUrlsResolver.deviceStatistics());
         return makeHttpRequest(getDeviceStatisticRequest)
                 .doOnSuccess(parseServerResponse)
                 .map(DeviceStatistic.getJsonMapper());
@@ -80,6 +81,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Completable checkDevice() {
+        checkDeviceRequest.setConnectionUrl(APIUrlsResolver.checkDevice());
         return makeHttpRequest(checkDeviceRequest)
                 .doOnSuccess(parseServerResponse)
                 .flatMapCompletable(response->Completable.create(
@@ -91,6 +93,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Completable registerDevice() {
+        registerDeviceRequest.setConnectionUrl(APIUrlsResolver.registerDevice());
         Map<String,String> params = new HashMap<>();
         params.put("manufacturer", Build.MANUFACTURER);
         params.put("model",Build.MODEL);
@@ -109,7 +112,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Completable verifyApiKey(ApiKey apiKey) {
-
+        verifyApiKeyRequest.setConnectionUrl(APIUrlsResolver.verifyApiKey());
         Map<String,String> params = new HashMap<>();
         params.put("api_key",apiKey.getValue());
         verifyApiKeyRequest.addRequestParams(params);
@@ -125,6 +128,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Single<ApiKey> login(UserCredentials credentials) {
+        loginRequest.setConnectionUrl(APIUrlsResolver.login());
         Map<String,String> params = new HashMap<>();
         params.put("login",credentials.getEmail());
         params.put("secret",credentials.getSecret());
