@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dip"
+    android:padding="8dip"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        android:layout_marginTop="16dip"
+        android:layout_marginBottom="16dip">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="8">
+            <EditText
+                android:id="@+id/change_server_url_input"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textUri"
+                android:hint="Server url"
+                android:textSize="13sp"/>
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/change_server_clear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Clear"
+            android:textColor="@android:color/darker_gray"
+            android:background="?android:attr/selectableItemBackground"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="right">
+
+        <Button
+            android:id="@+id/change_server_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:textColor="@android:color/darker_gray"
+            android:background="?android:attr/selectableItemBackground"
+            android:textStyle="bold"
+            android:layout_margin="2dip"/>
+
+        <Button
+            android:id="@+id/change_server_save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:textColor="@android:color/white"
+            android:background="@color/colorPrimary"
+            android:textStyle="bold"
+            android:layout_margin="2dip"/>
+
+    </LinearLayout>
+
+</LinearLayout>
