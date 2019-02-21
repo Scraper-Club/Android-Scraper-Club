@@ -18,8 +18,9 @@ public class ScraperApp extends Application {
     public static final String PREFERENCES_NAME = "scraper_pref";
 
     private static ScraperApp instance;
+    private String serverUrl;
 
-    private static ScraperApp getInstance(){
+    public static ScraperApp getInstance(){
         return instance;
     }
 
@@ -27,9 +28,7 @@ public class ScraperApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        APIUrlsResolver.setServerURL(
-                loadUrlFromPreferences()
-        );
+        setServerUrl(loadUrlFromPreferences());
     }
 
     private URL loadUrlFromPreferences(){
@@ -49,9 +48,14 @@ public class ScraperApp extends Application {
         return serverUrl;
     }
 
-    public void updateServerURL(URL newServerUrl){
-        APIUrlsResolver.setServerURL(newServerUrl);
+    public String getServerUrl() {
+        return serverUrl;
+    }
+
+    public void setServerUrl(URL serverUrl){
+        this.serverUrl = serverUrl.toString();
+        APIUrlsResolver.setServerURL(serverUrl);
         SharedPreferences preferences = getSharedPreferences(ScraperApp.PREFERENCES_NAME,MODE_PRIVATE);
-        preferences.edit().putString(PREFERENCES_SERVER_URL,newServerUrl.toString()).apply();
+        preferences.edit().putString(PREFERENCES_SERVER_URL,serverUrl.toString()).apply();
     }
 }
