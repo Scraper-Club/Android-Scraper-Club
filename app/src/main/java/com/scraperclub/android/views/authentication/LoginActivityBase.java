@@ -96,7 +96,7 @@ public abstract class LoginActivityBase<T> extends AppCompatActivity implements 
 
     @Override
     public void displayErrorMessage(String message) {
-        snackbar = Snackbar.make(loginButton.getRootView(),message, Snackbar.LENGTH_INDEFINITE);
+        snackbar = Snackbar.make(loginButton,message, Snackbar.LENGTH_INDEFINITE);
         snackbar.setAction("Retry", v-> {
             snackbar.dismiss();
             loginButton.performClick();
