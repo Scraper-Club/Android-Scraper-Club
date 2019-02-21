@@ -115,4 +115,14 @@ public abstract class LoginActivityBase<T> extends AppCompatActivity implements 
         if(snackbar!=null && snackbar.isShown())
             snackbar.dismiss();
     }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if(dialog!=null){
+            dialog.release();
+            dialog = null;
+        }
+
+    }
 }
