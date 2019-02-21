@@ -39,16 +39,8 @@ public class ScraperCore {
         return preferencesManager.isTokenAvailable();
     }
 
-    public boolean getWithoutCharge() {
-        return preferencesManager.getWithoutCharge();
-    }
-
     public void setApiKey(ApiKey apiKey) {
         preferencesManager.setToken(apiKey.getValue());
-    }
-
-    public void setWithoutCharge(boolean withoutCharge) {
-        preferencesManager.setWithoutCharge(withoutCharge);
     }
 
     public void clearPrefs() {

@@ -31,19 +31,9 @@ public class PreferencesManager {
         return preferences.contains(TOKEN_KEY) && preferences.getString(TOKEN_KEY, null) != null;
     }
 
-    public boolean getWithoutCharge() {
-        SharedPreferences preferences = context.getSharedPreferences(PREF_NAME, MODE_PRIVATE);
-        return preferences.contains(WITHOUT_CHARGE_KEY) && preferences.getBoolean(WITHOUT_CHARGE_KEY, false);
-    }
-
     public void setToken(String token){
         SharedPreferences preferences = context.getSharedPreferences(PREF_NAME,MODE_PRIVATE);
         preferences.edit().putString(TOKEN_KEY,token).apply();
-    }
-
-    public void setWithoutCharge(boolean withoutCharge){
-        SharedPreferences preferences = context.getSharedPreferences(PREF_NAME,MODE_PRIVATE);
-        preferences.edit().putBoolean(WITHOUT_CHARGE_KEY,withoutCharge).apply();
     }
 
     public boolean isFirstLaunch(){
