@@ -7,6 +7,11 @@ import java.util.Locale;
 public class APIUrlsResolver {
 
     private static String SERVER_URL = BuildConfig.SERVER_URL;
+
+    public static void setServerURL(URL serverUrl){
+        SERVER_URL = serverUrl.toString();
+    }
+
     private static String API_URL = SERVER_URL + "api/";
 
     public static String SIGNUP_URL = SERVER_URL + "signup/";
