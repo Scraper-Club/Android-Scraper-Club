@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.scraperclub.android.api.model.ApiKey;
 import com.scraperclub.android.ScraperCore;
@@ -16,6 +17,8 @@ import com.scraperclub.android.presenter.LoginControllerBase;
 
 public abstract class LoginActivityBase<T> extends AppCompatActivity implements LoginView {
 
+    protected TextView changeServerLink;
+    protected TextView serverUrlTextView;
     protected ProgressDialog progressDialog = null;
     protected String progressMessage;
 

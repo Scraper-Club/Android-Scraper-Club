@@ -16,6 +16,9 @@ abstract class ApiKeyLoginActivityBase extends LoginActivityBase<ApiKey> {
         setContentView(R.layout.activity_api_key_login);
         loginButton = findViewById(R.id.button_login);
         apiKeyInput = findViewById(R.id.input_api_key);
+
+        serverUrlTextView = findViewById(R.id.server_url);
+        changeServerLink = findViewById(R.id.change_server);
         progressMessage = "Verifying key...";
     }
 }

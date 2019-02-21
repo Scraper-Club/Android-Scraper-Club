@@ -25,6 +25,9 @@ abstract class EmailLoginActivityBase extends LoginActivityBase<UserCredentials>
         loginButton = findViewById(R.id.button_login);
         signupLink = findViewById(R.id.link_signup);
         apiKeyLink = findViewById(R.id.link_apikey_login);
+
+        serverUrlTextView = findViewById(R.id.server_url);
+        changeServerLink = findViewById(R.id.change_server);
         progressMessage = "Logging in...";
     }
 }
