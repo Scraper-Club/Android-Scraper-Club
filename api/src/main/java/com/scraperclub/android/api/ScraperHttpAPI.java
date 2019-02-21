@@ -49,7 +49,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
     @Override
     public Single<ScraperUrl> getNextUrl() {
         getNexrUrlRequest.setMethod("POST");
-        getNexrUrlRequest.setConnectionUrl(ScraperAPIUrls.getNextUrl());
+        getNexrUrlRequest.setConnectionUrl(APIUrlsResolver.getNextUrl());
         return makeHttpRequest(getNexrUrlRequest)
                 .doOnSuccess(parseServerResponse)
                 .map(ScraperUrl.getJsonMapper());
@@ -58,7 +58,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
     @Override
     public Single<ScraperUrl> getNextUrl(String pool) {
         getNexrUrlRequest.setMethod("GET");
-        getNexrUrlRequest.setConnectionUrl(ScraperAPIUrls.getNextUrl(pool));
+        getNexrUrlRequest.setConnectionUrl(APIUrlsResolver.getNextUrl(pool));
         return makeHttpRequest(getNexrUrlRequest)
                 .doOnSuccess(parseServerResponse)
                 .map(ScraperUrl.getJsonMapper());
@@ -66,7 +66,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Completable uploadResult(ScraperResult result) {
-        uploadHtmlRequest.setConnectionUrl(ScraperAPIUrls.upload(result.getId()));
+        uploadHtmlRequest.setConnectionUrl(APIUrlsResolver.upload(result.getId()));
         uploadHtmlRequest.setRequestBody(result.getResult());
 
         return makeHttpRequest(uploadHtmlRequest)
@@ -137,7 +137,7 @@ public final class ScraperHttpAPI extends ScraperHttpAPIBase {
 
     @Override
     public Completable badUrl(int urlId) {
-        badUrlRequest.setConnectionUrl(ScraperAPIUrls.badUrl(urlId));
+        badUrlRequest.setConnectionUrl(APIUrlsResolver.badUrl(urlId));
         return makeHttpRequest(badUrlRequest)
                 .doOnSuccess(parseServerResponse)
                 .flatMapCompletable(response->Completable.create(

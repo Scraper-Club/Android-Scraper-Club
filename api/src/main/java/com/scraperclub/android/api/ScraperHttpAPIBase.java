@@ -23,28 +23,28 @@ abstract class ScraperHttpAPIBase implements ScraperAPI{
         requests.add(uploadHtmlRequest);
 
         loginRequest = new FormUrlEncodedHttpRequest();
-        loginRequest.setConnectionUrl(ScraperAPIUrls.login());
+        loginRequest.setConnectionUrl(APIUrlsResolver.login());
         requests.add(loginRequest);
 
         verifyApiKeyRequest = new FormUrlEncodedHttpRequest();
-        verifyApiKeyRequest.setConnectionUrl(ScraperAPIUrls.verifyApiKey());
+        verifyApiKeyRequest.setConnectionUrl(APIUrlsResolver.verifyApiKey());
         requests.add(verifyApiKeyRequest);
 
 
         getDeviceStatisticRequest = new HttpRequest();
-        getDeviceStatisticRequest.setConnectionUrl(ScraperAPIUrls.deviceStatistics());
+        getDeviceStatisticRequest.setConnectionUrl(APIUrlsResolver.deviceStatistics());
         requests.add(getDeviceStatisticRequest);
 
         getNexrUrlRequest = new HttpRequest();
-        getNexrUrlRequest.setConnectionUrl(ScraperAPIUrls.getNextUrl());
+        getNexrUrlRequest.setConnectionUrl(APIUrlsResolver.getNextUrl());
         requests.add(getNexrUrlRequest);
 
         registerDeviceRequest = new FormUrlEncodedHttpRequest();
-        registerDeviceRequest.setConnectionUrl(ScraperAPIUrls.registerDevice());
+        registerDeviceRequest.setConnectionUrl(APIUrlsResolver.registerDevice());
         requests.add(registerDeviceRequest);
 
         checkDeviceRequest = new HttpRequest();
-        checkDeviceRequest.setConnectionUrl(ScraperAPIUrls.checkDevice());
+        checkDeviceRequest.setConnectionUrl(APIUrlsResolver.checkDevice());
         requests.add(checkDeviceRequest);
 
         badUrlRequest = new HttpRequest();

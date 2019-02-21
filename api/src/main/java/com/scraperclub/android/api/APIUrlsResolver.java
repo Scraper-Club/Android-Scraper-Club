@@ -1,12 +1,10 @@
 package com.scraperclub.android.api;
 
-import com.scraperclub.android.api.BuildConfig;
-
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.Locale;
 
-public class ScraperAPIUrls {
+public class APIUrlsResolver {
 
     private static String SERVER_URL = BuildConfig.SERVER_URL;
     private static String API_URL = SERVER_URL + "api/";

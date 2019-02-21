@@ -5,7 +5,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.scraperclub.android.api.ScraperAPIUrls;
+import com.scraperclub.android.api.APIUrlsResolver;
 import com.scraperclub.android.api.model.UserCredentials;
 import com.scraperclub.android.presenter.EmailLoginController;
 
@@ -26,7 +26,7 @@ public final class EmailLoginActivity extends EmailLoginActivityBase implements 
 
         signupLink.setOnClickListener(
                 v->{
-                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(ScraperAPIUrls.SIGNUP_URL));
+                    Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse(APIUrlsResolver.SIGNUP_URL));
                     startActivity(browserIntent);
                 }
         );
