@@ -37,6 +37,19 @@
             style="@style/StatsStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="Server:" />
+
+        <TextView
+            android:id="@+id/stats_server_url"
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <TextView
+            style="@style/StatsStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="Server status" />
 
         <LinearLayout

@@ -9,6 +9,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import com.scraperclub.android.R;
+import com.scraperclub.android.ScraperApp;
 
 public abstract class MainActivityBase extends AppCompatActivity{
     protected ImageView serverStatusImg;
@@ -27,6 +28,8 @@ public abstract class MainActivityBase extends AppCompatActivity{
     protected Switch enableScrapingPrivate;
     protected TextView privatePoolLabel;
     protected TextView privatePoolURls;
+
+    protected TextView serverUrl;
 
     protected ScrollView logScrollView;
     protected TextView header;
@@ -53,5 +56,8 @@ public abstract class MainActivityBase extends AppCompatActivity{
 
         logScrollView = findViewById(R.id.log_scroll_view);
         header = findViewById(R.id.header_view);
+        serverUrl = findViewById(R.id.stats_server_url);
+
+        serverUrl.setText(ScraperApp.getInstance().getServerUrl());
     }
 }
