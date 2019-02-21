@@ -6,15 +6,15 @@ import java.util.Locale;
 
 public class APIUrlsResolver {
 
-    private static String SERVER_URL = BuildConfig.SERVER_URL;
+    private static String SERVER_URL;
+    private static String API_URL = SERVER_URL + "/api/";
+    public static String SIGNUP_URL = SERVER_URL + "/signup/";
 
     public static void setServerURL(URL serverUrl){
         SERVER_URL = serverUrl.toString();
+        API_URL = SERVER_URL + "/api/";
+        SIGNUP_URL = SERVER_URL + "/signup/";
     }
-
-    private static String API_URL = SERVER_URL + "api/";
-
-    public static String SIGNUP_URL = SERVER_URL + "signup/";
 
     public static URL login(){
         return fromString(API_URL + "auth/login/");

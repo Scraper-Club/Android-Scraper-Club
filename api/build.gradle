@@ -14,10 +14,10 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            buildConfigField("String", "SERVER_URL", "\"https://android.scraperclub.com/\"")
+            buildConfigField("String", "SERVER_URL", "\"https://android.scraperclub.com\"")
         }
         debug {
-            buildConfigField("String", "SERVER_URL", "\"http://192.168.2.1:8899/\"")
+            buildConfigField("String", "SERVER_URL", "\"http://192.168.2.1:8899\"")
         }
     }
     compileOptions {
