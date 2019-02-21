@@ -28,7 +28,9 @@ public class ScraperApp extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        setServerUrl(loadUrlFromPreferences());
+        URL server = loadUrlFromPreferences();
+        this.serverUrl = server.toString();
+        APIUrlsResolver.setServerURL(server);
     }
 
     private URL loadUrlFromPreferences(){
